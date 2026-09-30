@@ -1,8 +1,8 @@
 public class Calculator {
 
     public int divide(int a, int b) {
-    int result = a / b;
-    return result;
+    int results = a / b;
+    return results;
 }
 
     public boolean isEven(int number) {
