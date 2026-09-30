@@ -12,7 +12,9 @@ public class Calculator {
             return false;
         }
     }
-
+public String buildQuery(String username) {
+    return "SELECT * FROM users WHERE username = '" + username + "'";
+}
     public int findMax(int[] numbers) {
         int max = 0;
 
@@ -21,6 +23,7 @@ public class Calculator {
                 max = numbers[i];
             }
         }
+        
 
         return max;
     }
