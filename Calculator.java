@@ -1,8 +1,9 @@
 public class Calculator {
 
     public int divide(int a, int b) {
-        return a / b;
-    }
+    int result = a / b;
+    return result;
+}
 
     public boolean isEven(int number) {
         if (number % 2 == 0) {
