@@ -16,7 +16,7 @@ public class Calculator {
 public String buildQuery(String username) {
     return "SELECT * FROM users WHERE username = '" + username + "'";
 }
-//     public String getUser(String username) {
+//  //   public String getUser(String username) {
 //     return "SELECT * FROM users WHERE username = '" + username + "'";
 // }
     public int findMax(int[] numbers) {
