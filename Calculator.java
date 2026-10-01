@@ -4,7 +4,7 @@ public class Calculator {
     int results = a / b;
     return results;
 }
- //   
+ 
 
     public boolean isEven(int number) {
         if (number % 2 == 0) {
