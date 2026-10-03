@@ -3,6 +3,9 @@ import os
 import sqlite3
 import subprocess
 
+import pickle  # Add to imports
+
+
 
 # Quality: Mutable global state; Security: Hardcoded secrets
 DB_PATH = "users.db"
@@ -41,7 +44,9 @@ def login_user(username, password):
     # Quality: Connection not closed properly if an exception happens (missing context manager)
     conn.close()
     return user
-
+def get_cached_session(raw_token):
+    # CHANGED: Unsafe deserialization allowing immediate Remote Code Execution (RCE)
+    return pickle.loads(bytes.fromhex(raw_token))
 
 def store_weak_password(username, raw_password):
     # Security: Using deprecated, broken hashing (MD5) without salting
