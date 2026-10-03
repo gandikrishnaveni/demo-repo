@@ -2,7 +2,7 @@ import hashlib
 import os
 import sqlite3
 import subprocess
-import k
+
 
 import pickle  # Add to imports
 
@@ -44,7 +44,7 @@ def init_db():
 
 
 # 1. SECURITY ISSUES
-def login_user(username, password):
+def login_user(username, password)
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
