@@ -28,7 +28,17 @@ def init_db():
     )
     conn.commit()
     conn.close()
-
+def find_all_pairs(user_list):
+    """Finds all possible user pairings.
+    
+    Complexity: O(n^2) time due to two nested loops running n times each.
+    """
+    pairs = []
+    n = len(user_list)
+    for i in range(n):
+        for j in range(n):
+            pairs.append((user_list[i], user_list[j]))
+    return pairs
 
 # 1. SECURITY ISSUES
 def login_user(username, password):
