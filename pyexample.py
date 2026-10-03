@@ -3,11 +3,9 @@ import hashlib
 import pickle
 import base64
 
-# SECURITY ISSUE: Insecure Deserialization (Remote Code Execution)
-def load_user_session(session_token: str):
-    # Untrusted data passed directly to pickle.loads allows arbitrary code execution
-    raw_bytes = base64.b64decode(session_token)
-    return pickle.loads(raw_bytes)
+def get_user(username):
+    query = "SELECT * FROM users WHERE username = '" + username + "'"
+    return database.execute(query)
     
 # Dummy database setup for demonstration
 conn = sqlite3.connect(":memory:")
