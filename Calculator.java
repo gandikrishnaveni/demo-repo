@@ -1,8 +1,18 @@
 public class Calculator {
 
     public int divide(int a, int b) {
-        return a / b;
+    int results = a / b;
+    return results;
+}
+    public void process(int[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+        for (int j = 0; j < arr.length; j++) {
+            System.out.println(arr[i] + arr[j]);
+        }
     }
+}
+    //
+
 
     public boolean isEven(int number) {
         if (number % 2 == 0) {
@@ -11,7 +21,12 @@ public class Calculator {
             return false;
         }
     }
-
+public String buildQuery(String username) {
+    return "SELECT * FROM users WHERE username = '" + username + "'";
+}
+//  //   public String getUser(String username) {
+//     return "SELECT * FROM users WHERE username = '" + username + "'";
+// }
     public int findMax(int[] numbers) {
         int max = 0;
 
@@ -20,6 +35,7 @@ public class Calculator {
                 max = numbers[i];
             }
         }
+        
 
         return max;
     }
