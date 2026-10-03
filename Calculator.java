@@ -4,13 +4,13 @@ public class Calculator {
     int results = a / b;
     return results;
 }
-    public void process(int[] arr) {
-    for (int i = 0; i < arr.length; i++) {
-        for (int j = 0; j < arr.length; j++) {
-            System.out.println(arr[i] + arr[j]);
-        }
-    }
-}
+//     public void process(int[] arr) {
+//     for (int i = 0; i < arr.length; i++) {
+//         for (int j = 0; j < arr.length; j++) {
+//             System.out.println(arr[i] + arr[j]);
+//         }
+//     }
+// }
 //
 
     public boolean isEven(int number) {
