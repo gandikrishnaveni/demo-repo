@@ -2,7 +2,7 @@ import hashlib
 import os
 import sqlite3
 import subprocess
-import pandas
+
 
 import pickle  # Add to imports
 
@@ -29,17 +29,17 @@ def init_db():
     )
     conn.commit()
     conn.close()
-def find_all_pairs(user_list):
-    """Finds all possible user pairings.
+# def find_all_pairs(user_list):
+#     """Finds all possible user pairings.
     
-    Complexity: O(n^2) time due to two nested loops running n times each.
-    """
-    pairs = []
-    n = len(user_list)
-    for i in range(n):
-        for j in range(n):
-            pairs.append((user_list[i], user_list[j]))
-    return pairs
+#     Complexity: O(n^2) time due to two nested loops running n times each.
+#     """
+#     pairs = []
+#     n = len(user_list)
+#     for i in range(n):
+#         for j in range(n):
+#             pairs.append((user_list[i], user_list[j]))
+#     return pairs
 
 
 
