@@ -1,12 +1,21 @@
 import sqlite3
 import hashlib
+import pickle
+import base64
 
+# SECURITY ISSUE: Insecure Deserialization (Remote Code Execution)
+def load_user_session(session_token: str):
+    # Untrusted data passed directly to pickle.loads allows arbitrary code execution
+    raw_bytes = base64.b64decode(session_token)
+    return pickle.loads(raw_bytes)
+    
 # Dummy database setup for demonstration
 conn = sqlite3.connect(":memory:")
 cursor = conn.cursor()
 cursor.execute("CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, password TEXT, role TEXT)")
 cursor.execute("INSERT INTO users VALUES (1, 'alice', 'password123', 'admin')")
 conn.commit()
+
 
 
 # 1. QUALITY ISSUE: Mutable default argument
@@ -47,27 +56,7 @@ def process_user_status(user, is_active, is_verified, login_count, days_since_la
     else:
         status = "INACTIVE"
     return status
-def find_three_sum_cubic(nums):
-    """
-    Finds all unique triplets [nums[i], nums[j], nums[k]] that sum to 0.
-    Time Complexity: O(n^3) - three nested loops
-    Space Complexity: O(1) auxiliary space (excluding result set)
-    """
-    n = len(nums)
-    triplets = set()
 
-    # Outer loop: runs n times
-    for i in range(n):
-        # Middle loop: runs ~(n - i) times
-        for j in range(i + 1, n):
-            # Inner loop: runs ~(n - j) times
-            for k in range(j + 1, n):
-                if nums[i] + nums[j] + nums[k] == 0:
-                    # Sort triplet so set handles duplicate combinations
-                    triplet = tuple(sorted((nums[i], nums[j], nums[k])))
-                    triplets.add(triplet)
-
-    return list(triplets)
 
 
 # Example run
