@@ -67,6 +67,6 @@ def get_user_config_value(config_dict, key):
     try:
         val = config_dict[key]
         return int(val)
-    except:
+    except (KeyError, ValueError, TypeError):
         return None
        
