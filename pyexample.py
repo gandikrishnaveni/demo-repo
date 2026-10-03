@@ -2,7 +2,7 @@ import hashlib
 import os
 import sqlite3
 import subprocess
-
+import pandas
 import pickle  # Add to imports
 
 
@@ -39,6 +39,8 @@ def find_all_pairs(user_list):
         for j in range(n):
             pairs.append((user_list[i], user_list[j]))
     return pairs
+
+
 
 # 1. SECURITY ISSUES
 def login_user(username, password):
