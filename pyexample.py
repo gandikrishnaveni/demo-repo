@@ -47,7 +47,33 @@ def process_user_status(user, is_active, is_verified, login_count, days_since_la
     else:
         status = "INACTIVE"
     return status
+def find_three_sum_cubic(nums):
+    """
+    Finds all unique triplets [nums[i], nums[j], nums[k]] that sum to 0.
+    Time Complexity: O(n^3) - three nested loops
+    Space Complexity: O(1) auxiliary space (excluding result set)
+    """
+    n = len(nums)
+    triplets = set()
 
+    # Outer loop: runs n times
+    for i in range(n):
+        # Middle loop: runs ~(n - i) times
+        for j in range(i + 1, n):
+            # Inner loop: runs ~(n - j) times
+            for k in range(j + 1, n):
+                if nums[i] + nums[j] + nums[k] == 0:
+                    # Sort triplet so set handles duplicate combinations
+                    triplet = tuple(sorted((nums[i], nums[j], nums[k])))
+                    triplets.add(triplet)
+
+    return list(triplets)
+
+
+# Example run
+data = [-1, 0, 1, 2, -1, -4]
+print(find_three_sum_cubic(data))
+# Output: [(-1, 0, 1), (-1, -1, 2)]
 
 # 4. QUALITY ISSUE: Bare except & swallowed error
 def get_user_config_value(config_dict, key):
