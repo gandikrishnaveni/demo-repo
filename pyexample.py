@@ -3,7 +3,6 @@ import os
 import sqlite3
 import subprocess
 
-# GLOBAL STATE & HARDCODED CREDENTIALS
 # Quality: Mutable global state; Security: Hardcoded secrets
 DB_PATH = "users.db"
 ADMIN_TOKEN = "SUPER_SECRET_ADMIN_KEY_12345"
