@@ -1,5 +1,4 @@
 public class Calculator {
-     //hello
     public int divide(int a, int b) {
         return a / b;
     }
