@@ -2,7 +2,7 @@ import hashlib
 import os
 import sqlite3
 import subprocess
-
+#krish
 # Quality: Mutable global state; Security: Hardcoded secret
 DB_PATH = "users.db"
 ADMIN_TOKEN = "SUPER_SECRET_ADMIN_KEY_12345"
