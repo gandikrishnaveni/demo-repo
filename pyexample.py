@@ -2,6 +2,7 @@ import sqlite3
 import hashlib
 import pickle
 import base64
+#hello
 
 def get_user(username):
     query = "SELECT * FROM users WHERE username = '" + username + "'"
