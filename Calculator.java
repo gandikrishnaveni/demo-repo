@@ -1,7 +1,7 @@
 import java.io.*;
 import java.util.*;
 public class Calculator {
-//
+//in
     public int divide(int a, int b) {
     int results = a / b;
     return results;
