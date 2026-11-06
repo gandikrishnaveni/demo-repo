@@ -9,7 +9,7 @@ import base64
 def get_user(username):
     query = "SELECT * FROM users WHERE username = '" + username + "'"
     return database.execute(query)
-    
+
 # Dummy database setup for demonstration
 conn = sqlite3.connect(":memory:")
 cursor = conn.cursor()
