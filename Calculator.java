@@ -2,10 +2,7 @@ import java.io.*;
 import java.util.*;
 public class Calculator {
 ////krishna
-    public int divide(int a, int b) {
-    int results = a / b;
-    return results;
-}
+    
     //
     public void process(int[] arr) {
     for (int i = 0; i < arr.length; i++) {
